@@ -1,0 +1,5 @@
+[47131:47131:0119/150120.715247:ERROR:gpu_blocklist.cc(71)] Unable to get gpu adapter
+[46809:46809:0119/194033.596712:ERROR:shared_context_state.cc(1266)] SharedContextState context lost via ARB/EXT_robustness. Reset status = GL_UNKNOWN_CONTEXT_RESET_KHR
+[46809:46809:0119/194033.597302:ERROR:gpu_service_impl.cc(1154)] Exiting GPU process because some drivers can't recover from errors. GPU process will restart shortly.
+[46692:46692:0119/194033.622539:ERROR:gpu_process_host.cc(982)] GPU process exited unexpectedly: exit_code=8704
+
