@@ -98,19 +98,19 @@ int main()
 	}
 	
 
-	{
-		std::cout << "==== FIFTH CONTEXT: static Animals with Brains =============" << std::endl;
-		const std::size_t N = 4;
-		Animal pack[N];
+	// {
+	// 	std::cout << "==== FIFTH CONTEXT: static Animals with Brains =============" << std::endl;
+	// 	const std::size_t N = 4;
+	// 	Animal pack[N];
 		
-		for (std::size_t i = 0; i < N; i++){
-			if (i % 2  == 0)
-				pack[i] = Cat();
-			else
-				pack[i] = Dog();
-			pack[i].makeSound();
-		}
-	}
+	// 	for (std::size_t i = 0; i < N; i++){
+	// 		if (i % 2  == 0)
+	// 			pack[i] = Cat();
+	// 		else
+	// 			pack[i] = Dog();
+	// 		pack[i].makeSound();
+	// 	}
+	// }
 	{
 		std::cout << "==== SIXTH CONTEXT: Pointers to  Animals with Brains =============" << std::endl;
 		const std::size_t N = 4;
