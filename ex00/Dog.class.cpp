@@ -24,13 +24,13 @@ Dog &  Dog::operator=(const Dog & other)
 	}
 	return *this; 
 }
-/*
+
 Dog::~Dog( void ) // destructor
 {
 	std::cout << COLORDog << "Dog destructor called." << RESETDog << std::endl;
 	return ;
 }
-*/
+
 
 // Constructor(s)
 //Dog::Dog(${ARGS_LIST});

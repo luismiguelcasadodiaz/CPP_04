@@ -32,7 +32,7 @@ class Dog : public Animal{
 		Dog( void ); //constructor by default
 		Dog(const Dog& other); //constructor by copy
 		Dog & operator=(const Dog & other) ;
-		//~Dog( void ); // destructor
+		~Dog( void ); // destructor
 
 		// Constructor(s)
 		//Dog(${ARGS_LIST});

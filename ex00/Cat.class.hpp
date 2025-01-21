@@ -33,7 +33,7 @@ class Cat : public Animal {
 		Cat( void ); //constructor by default
 		Cat(const Cat& other); //constructor by copy
 		Cat & operator=(const Cat & other);
-		//~Cat( void ); // destructor
+		~Cat( void ); // destructor
 
 		// Constructor(s)
 		//Cat(${ARGS_LIST});

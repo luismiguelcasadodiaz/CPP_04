@@ -25,13 +25,13 @@ Cat &  Cat::operator=(const Cat & other)
 	return *this; 
 }
 
-/*
+
 Cat::~Cat( void ) // destructor
 {
 	std::cout << COLORCat << "Cat destructor called." << RESETCat << std::endl;
 	return ;
 }
-*/
+
 
 // Constructor(s)
 //Cat::Cat(${ARGS_LIST});
