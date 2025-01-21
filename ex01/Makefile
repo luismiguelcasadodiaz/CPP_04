@@ -6,7 +6,7 @@
 #    By: luicasad <luicasad@student.42barcel>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/30 13:07:33 by luicasad          #+#    #+#              #
-#    Updated: 2025/01/04 15:06:43 by luicasad         ###   ########.fr        #
+#    Updated: 2025/01/18 11:45:14 by luicasad         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -42,20 +42,26 @@ REQUIRED_DIRS	= $(OBJDIR)
 #                               COMPILER SETUP                                 #
 # ============================================================================ #
 CC 				= c++ -std=c++98
-WRNFL			= -Wall -Wextra -Werror -Wconversion -Wdouble-promotion -fsanitize=address
+WRNFL			= -Wall -Wextra -Werror -Wshadow -fsanitize=address
 DBGFL			= -g3  -pg
 CFLGS			= $(DBGFL) $(WRNFL) -c 
 #HEADS			= -I$(INCDIR)
 LFLGS 			= -fsanitize=address
 
-HEADERS		=	ClapTrap.class.hpp \
-				ScavTrap.class.hpp \
-				FragTrap.class.hpp
+HEADERS		=	Animal.class.hpp \
+				Dog.class.hpp \
+				Cat.class.hpp \
+				Brain.class.hpp \
+				WrongAnimal.class.hpp \
+				WrongCat.class.hpp 
 
 SRCS_TARGET	= 	main.cpp \
-				ClapTrap.class.cpp \
-				ScavTrap.class.cpp \
-				FragTrap.class.cpp			
+				Animal.class.cpp \
+				Dog.class.cpp \
+				Cat.class.cpp \
+				Brain.class.cpp \
+				WrongAnimal.class.cpp \
+				WrongCat.class.cpp 
 
 
 FILE_TARGET = $(addprefix $(SRCDIR_TARGET), $(SRCS_TARGET))
