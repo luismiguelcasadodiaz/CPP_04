@@ -25,7 +25,9 @@ class WrongAnimal {
 	private:
 		// Private member functions
 	protected:
+		std::string type;
 		// Protectd member functions
+
 	public:
 		// Canonical form 
 		WrongAnimal( void ); //constructor by default
@@ -43,7 +45,8 @@ class WrongAnimal {
 		// Oveloading of comparison operators
 
 		// Public member functions
-
+		void makeSound() const;
+		std::string getType( void ) const ;
 		// Helper functions for canonicalization
 		std::string canonizeme( void ) const;
 };

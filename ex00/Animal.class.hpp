@@ -25,15 +25,15 @@ class Animal {
 	private:
 		// Private member functions
 	protected:
-		std::string type,
+		std::string type;
 		// Protectd member functions
-		void virtual makeSound() const;
+
 	public:
 		// Canonical form 
 		Animal( void ); //constructor by default
 		Animal(const Animal& other); //constructor by copy
 		Animal & operator=(const Animal & other);
-		~Animal( void ); // destructor
+		virtual ~Animal( void ); // destructor
 
 		// Constructor(s)
 		//Animal(${ARGS_LIST});
@@ -45,7 +45,8 @@ class Animal {
 		// Oveloading of comparison operators
 
 		// Public member functions
-
+		void virtual makeSound() const;
+		std::string getType( void ) const ;
 		// Helper functions for canonicalization
 		std::string canonizeme( void ) const;
 };

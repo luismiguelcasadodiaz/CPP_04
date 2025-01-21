@@ -5,16 +5,15 @@
 //
 WrongAnimal::WrongAnimal( void ) //constructor by default
 {
-	std::cout << "Default constructor called for WrongAnimal " << std::endl;
+	type = "WrongAnimal";
 	std::cout << COLORWrongAnimal << "WrongAnimal default constructor called." << RESETWrongAnimal << std::endl;
-	return ;
 }
 
 WrongAnimal::WrongAnimal(const WrongAnimal& other) //constructor by copy
 {
 	std::cout << COLORWrongAnimal << "WrongAnimal copy constructor called." << RESETWrongAnimal << std::endl;
-	*this = other;
-	return;
+	type = other.type;
+
 }
 
 WrongAnimal &  WrongAnimal::operator=(const WrongAnimal & other)
@@ -22,7 +21,7 @@ WrongAnimal &  WrongAnimal::operator=(const WrongAnimal & other)
 	std::cout << COLORWrongAnimal << "WrongAnimal copy assignment operator called." << RESETWrongAnimal <<std::endl;
 	if (this != &other)
 	{
-		*this = other;
+		type = other.type;
 	}
 	return *this; 
 }
@@ -43,13 +42,20 @@ WrongAnimal::~WrongAnimal( void ) // destructor
 // Comparison operators
 
 // public member functions
-// protected  member functions
+std::string WrongAnimal::getType( void ) const {
+	return (type);
+}
 
+
+void WrongAnimal::makeSound() const{
+	std::cout << COLORWrongAnimal << type << " makes undefined sound ..." << RESETWrongAnimal << std::endl;
+}
+// protected  member functions
 // private member funcions
 
 // Helper functions for canonicalization
 std::string WrongAnimal::canonizeme( void ) const {
-	std::string _str_ = "No implemented yet";
+	std::string _str_ = "[>" + type = +"<]";
 	return (_str_);
 }
 

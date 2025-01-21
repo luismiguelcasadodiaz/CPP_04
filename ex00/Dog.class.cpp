@@ -5,16 +5,14 @@
 //
 Dog::Dog( void ) //constructor by default
 {
-	std::cout << "Default constructor called for Dog " << std::endl;
 	std::cout << COLORDog << "Dog default constructor called." << RESETDog << std::endl;
-	return ;
+	type = "Dog";
 }
 
 Dog::Dog(const Dog& other) //constructor by copy
 {
 	std::cout << COLORDog << "Dog copy constructor called." << RESETDog << std::endl;
-	*this = other;
-	return;
+	type = other.type;
 }
 
 Dog &  Dog::operator=(const Dog & other)
@@ -22,16 +20,17 @@ Dog &  Dog::operator=(const Dog & other)
 	std::cout << COLORDog << "Dog copy assignment operator called." << RESETDog <<std::endl;
 	if (this != &other)
 	{
-		*this = other;
+		type = other.type;
 	}
 	return *this; 
 }
-
+/*
 Dog::~Dog( void ) // destructor
 {
 	std::cout << COLORDog << "Dog destructor called." << RESETDog << std::endl;
 	return ;
 }
+*/
 
 // Constructor(s)
 //Dog::Dog(${ARGS_LIST});
@@ -43,15 +42,15 @@ Dog::~Dog( void ) // destructor
 // Comparison operators
 
 // public member functions
+void Dog::makeSound( void ) const {
+	std::cout << COLORDog << type << "  makes the sound of a Dog. " << RESETDog << std::endl;
+}
 // protected  member functions
 
 // private member funcions
 
 // Helper functions for canonicalization
-std::string Dog::canonizeme( void ) const {
-	std::string _str_ = "No implemented yet";
-	return (_str_);
-}
+
 
 
 std::ostream& operator<<(std::ostream& os, const Dog& obj)

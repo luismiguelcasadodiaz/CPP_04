@@ -18,10 +18,12 @@
 //# define COLORCat		"\033[38;5;245m"         //MID_GRAY
 //# define COLORCat		"\033[38;2;75;179;82m"   //DARK_GREEN
 //# define COLORCat		"\033[38;5;143m"         //DARK_YELLOW
+
+# include "Animal.class.hpp"
 # include <iostream>
 # include <string>
 
-class Cat {
+class Cat : public Animal {
 	private:
 		// Private member functions
 	protected:
@@ -31,7 +33,7 @@ class Cat {
 		Cat( void ); //constructor by default
 		Cat(const Cat& other); //constructor by copy
 		Cat & operator=(const Cat & other);
-		~Cat( void ); // destructor
+		//~Cat( void ); // destructor
 
 		// Constructor(s)
 		//Cat(${ARGS_LIST});
@@ -43,9 +45,9 @@ class Cat {
 		// Oveloading of comparison operators
 
 		// Public member functions
-
+		void virtual makeSound ( void ) const;
 		// Helper functions for canonicalization
-		std::string canonizeme( void ) const;
+
 };
 
 std::ostream& operator<<(std::ostream& os, const Cat& obj);

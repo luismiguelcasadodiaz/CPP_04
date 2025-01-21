@@ -18,10 +18,11 @@
 //# define COLORWrongCat		"\033[38;5;245m"         //MID_GRAY
 //# define COLORWrongCat		"\033[38;2;75;179;82m"   //DARK_GREEN
 //# define COLORWrongCat		"\033[38;5;143m"         //DARK_YELLOW
+# include "WrongAnimal.class.hpp"
 # include <iostream>
 # include <string>
 
-class WrongCat {
+class WrongCat : public WrongAnimal {
 	private:
 		// Private member functions
 	protected:
@@ -43,9 +44,8 @@ class WrongCat {
 		// Oveloading of comparison operators
 
 		// Public member functions
-
+		void makeSound( void ) const;
 		// Helper functions for canonicalization
-		std::string canonizeme( void ) const;
 };
 
 std::ostream& operator<<(std::ostream& os, const WrongCat& obj);

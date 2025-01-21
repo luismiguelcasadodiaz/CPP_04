@@ -18,10 +18,11 @@
 //# define COLORDog		"\033[38;5;245m"         //MID_GRAY
 //# define COLORDog		"\033[38;2;75;179;82m"   //DARK_GREEN
 //# define COLORDog		"\033[38;5;143m"         //DARK_YELLOW
+# include "Animal.class.hpp"
 # include <iostream>
 # include <string>
 
-class Dog {
+class Dog : public Animal{
 	private:
 		// Private member functions
 	protected:
@@ -30,8 +31,8 @@ class Dog {
 		// Canonical form 
 		Dog( void ); //constructor by default
 		Dog(const Dog& other); //constructor by copy
-		Dog & operator=(const Dog & other);
-		~Dog( void ); // destructor
+		Dog & operator=(const Dog & other) ;
+		//~Dog( void ); // destructor
 
 		// Constructor(s)
 		//Dog(${ARGS_LIST});
@@ -43,9 +44,9 @@ class Dog {
 		// Oveloading of comparison operators
 
 		// Public member functions
-
+		void virtual makeSound ( void ) const ;
 		// Helper functions for canonicalization
-		std::string canonizeme( void ) const;
+
 };
 
 std::ostream& operator<<(std::ostream& os, const Dog& obj);

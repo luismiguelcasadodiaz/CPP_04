@@ -5,16 +5,14 @@
 //
 WrongCat::WrongCat( void ) //constructor by default
 {
-	std::cout << "Default constructor called for WrongCat " << std::endl;
+	type = "WrongCat";
 	std::cout << COLORWrongCat << "WrongCat default constructor called." << RESETWrongCat << std::endl;
-	return ;
 }
 
 WrongCat::WrongCat(const WrongCat& other) //constructor by copy
 {
 	std::cout << COLORWrongCat << "WrongCat copy constructor called." << RESETWrongCat << std::endl;
-	*this = other;
-	return;
+	type = other.type;
 }
 
 WrongCat &  WrongCat::operator=(const WrongCat & other)
@@ -22,15 +20,15 @@ WrongCat &  WrongCat::operator=(const WrongCat & other)
 	std::cout << COLORWrongCat << "WrongCat copy assignment operator called." << RESETWrongCat <<std::endl;
 	if (this != &other)
 	{
-		*this = other;
+		type = other.type;
 	}
 	return *this; 
 }
 
 WrongCat::~WrongCat( void ) // destructor
 {
+	type = "WrongCat";
 	std::cout << COLORWrongCat << "WrongCat destructor called." << RESETWrongCat << std::endl;
-	return ;
 }
 
 // Constructor(s)
@@ -43,15 +41,15 @@ WrongCat::~WrongCat( void ) // destructor
 // Comparison operators
 
 // public member functions
+void WrongCat::makeSound( void ) const {
+	std::cout << COLORWrongCat << type << " makes the sound of a WrongCat." << RESETWrongCat << std::endl;
+}
 // protected  member functions
 
 // private member funcions
 
 // Helper functions for canonicalization
-std::string WrongCat::canonizeme( void ) const {
-	std::string _str_ = "No implemented yet";
-	return (_str_);
-}
+
 
 
 std::ostream& operator<<(std::ostream& os, const WrongCat& obj)
