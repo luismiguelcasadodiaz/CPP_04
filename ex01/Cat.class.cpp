@@ -15,8 +15,8 @@ Cat::Cat(const Cat& other) //constructor by copy
 {
 	std::cout << COLORCat << "Cat copy constructor called." << RESETCat << std::endl;
 	type = other.type;
-	delete _brain;
-	_brain = other._brain;
+	//delete _brain;
+	_brain = new Brain(*(other._brain));
 	_num_ideas = other._num_ideas;
 }
 

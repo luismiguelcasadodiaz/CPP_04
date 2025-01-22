@@ -19,9 +19,9 @@
 
 int main()
 {
-	/*
+	
 	{
-	std::cout << "==== FIRST CONTEXT: makeSound() is virtual =============" << std::endl;
+	std::cout << "ex 00 ==== FIRST CONTEXT: makeSound() is virtual =============" << std::endl;
 	const Animal* meta = new Animal();
 	const Animal* j = new Dog();
 	const Animal* i = new Cat();
@@ -46,7 +46,7 @@ int main()
 	delete i;
 	}
 	{
-	std::cout << "==== SECOND CONTEXT: makeSound() is normal =============" << std::endl;
+	std::cout << "ex00 ==== SECOND CONTEXT: makeSound() is normal =============" << std::endl;
 	const WrongAnimal* wmeta = new WrongAnimal();
 	const WrongAnimal* wi = new WrongCat();
 
@@ -61,9 +61,9 @@ int main()
 	delete wmeta;
 	delete wi;
 	}
-	*/
-/*	
-	std::cout << "==== THIRD CONTEXT: Brains =============" << std::endl;
+	/**/
+/*	*/
+	std::cout << "ex01 ==== THIRD CONTEXT: Brains =============" << std::endl;
 
 	{	
 		
@@ -87,9 +87,9 @@ int main()
 
 		std::cout << two << std::endl;
 	}
-*/
+/**/
 	{
-		std::cout << "==== FOURTH CONTEXT: static Animals with Brains =============" << std::endl;
+		std::cout << "ex 01 ==== FOURTH CONTEXT: static Animals with Brains =============" << std::endl;
 		std::cout << "------------------ Leak test  << ----------------" << std::endl;
 		const Animal* j = new Dog();
 		const Animal* i = new Cat();
@@ -99,7 +99,7 @@ int main()
 	
 
 	{
-		std::cout << "==== FIFTH CONTEXT: static Animals with Brains =============" << std::endl;
+		std::cout << "ex 01==== FIFTH CONTEXT: static Animals with Brains =============" << std::endl;
 		const std::size_t N = 4;
 		Animal pack[N];
 		
@@ -112,9 +112,10 @@ int main()
 		}
 	}
 	{
-		std::cout << "==== SIXTH CONTEXT: Pointers to  Animals with Brains =============" << std::endl;
+		std::cout << "ex 01==== SIXTH CONTEXT: Pointers to  Animals with Brains =============" << std::endl;
 		const std::size_t N = 4;
 		Animal* pack[N];
+		Animal* back[N];
 
 		for (std::size_t i = 0; i < N; i++){
 			if (i % 2  == 0)
@@ -125,78 +126,8 @@ int main()
 		}
 		for (std::size_t i = 0; i < N; i++)
 			delete pack[i];
-	}
-
-	{
-		std::cout << "==== SEVENTH CONTEXT: Dog copy with constructor " << std::endl;
-
-		Dog dog_one = Dog();
-
-		dog_one.setIdea("Dog one's first new idea");
-		dog_one.setIdea("Dog one's second new idea");
-		dog_one.setIdea("Dog one's third new idea");
-		std::cout << "----- dog_one -----" << std::endl;
-		std::cout << dog_one << std::endl;
-
-		Dog dog_two(dog_one);
-		std::cout << "----- dog_two -----" << std::endl;
-		dog_two.setIdea("Dog two's fourth new idea");
-		std::cout << dog_two << std::endl;
-		std::cout << "----- dog_one -----" << std::endl;
-		std::cout << dog_one << std::endl;
-
-	}
-
-	{
-		std::cout << "==== EIGHTTH CONTEXT: Dog Copy EQUAL operator =============" << std::endl;
-
-		Dog dog_one = Dog();
-
-		dog_one.setIdea("Dog one's first new idea");
-		dog_one.setIdea("Dog one's second new idea");
-		dog_one.setIdea("Dog one's third new idea");
-		std::cout << "----- dog_one -----" << std::endl;
-		std::cout << dog_one << std::endl;
-
-		Dog dog_two;
-		dog_two = dog_one;
-		std::cout << "----- dog_two -----" << std::endl;
-		dog_two.setIdea("Dog two's fourth new idea");
-		std::cout << dog_two << std::endl;
-		std::cout << "----- dog_one -----" << std::endl;
-		std::cout << dog_one << std::endl;
-
-		dog_two = dog_one;
-		std::cout << "----- dog_two second time -----" << std::endl;
-		dog_two.setIdea("Dog two's fith new idea");
-		std::cout << dog_two << std::endl;
-		std::cout << "----- dog_one -----" << std::endl;
-		std::cout << dog_one << std::endl;
-	}
-/*
-	{
-		std::cout << "------------------Brains initial states has no ideas ----------------" << std::endl;	
-
-		for (std::size_t i = 0; i < N; i++){
-			std::cout << pack[i] ;
-			pack[i].makeSound();
-			// if (i % 2  == 0)
-			// 	dynamic_cast<Cat*>(pack[i])->makeSound();
-			// else
-			// 	dynamic_cast<Dog*>(pack[i])->makeSound();
-			
-		}
-
-		std::cout << "------------------Brain states after first dog think ----------------" << std::endl;
-
-		// dynamic_cast<Dog*>(pack[1])->setIdea("Dog-s first new idea");
-		// dynamic_cast<Dog*>(pack[1])->setIdea("Dog-s second new idea");
-		// dynamic_cast<Dog*>(pack[1])->setIdea("Dog-s third new idea");
-
-		dynamic_cast<Dog*>(&pack[1])->setIdea("Dog-s first new idea");
-		dynamic_cast<Dog*>(&pack[1])->setIdea("Dog-s second new idea");
-		dynamic_cast<Dog*>(&pack[1])->setIdea("Dog-s third new idea");
-
+		{
+		
 		for (std::size_t i = 0; i < N; i++)
 			std::cout << pack[i] << std::endl;
 		std::cout << "------------------Brain states after second dog gets first dog's brain ----------------" << std::endl;
@@ -225,16 +156,66 @@ int main()
 
 		// }
 	}
+	}
+
+	{
+		std::cout << "ex 01 ==== SEVENTH CONTEXT: Dog copy with constructor " << std::endl;
+
+		Dog dog_one = Dog();
+
+		dog_one.setIdea("Dog one's first new idea");
+		dog_one.setIdea("Dog one's second new idea");
+		dog_one.setIdea("Dog one's third new idea");
+		std::cout << "----- dog_one -----" << std::endl;
+		std::cout << dog_one << std::endl;
+
+		Dog dog_two(dog_one);
+		std::cout << "----- dog_two -----" << std::endl;
+		dog_two.setIdea("Dog two's fourth new idea");
+		std::cout << dog_two << std::endl;
+		std::cout << "----- dog_one -----" << std::endl;
+		std::cout << dog_one << std::endl;
+
+	}
+
+	{
+		std::cout << "ex 01 ==== EIGHTTH CONTEXT: Dog Copy EQUAL operator =============" << std::endl;
+
+		Dog dog_one = Dog();
+
+		dog_one.setIdea("Dog one's first new idea");
+		dog_one.setIdea("Dog one's second new idea");
+		dog_one.setIdea("Dog one's third new idea");
+		std::cout << "----- dog_one -----" << std::endl;
+		std::cout << dog_one << std::endl;
+
+		Dog dog_two;
+		dog_two = dog_one;
+		std::cout << "----- dog_two -----" << std::endl;
+		dog_two.setIdea("Dog two's fourth new idea");
+		std::cout << dog_two << std::endl;
+		std::cout << "----- dog_one -----" << std::endl;
+		std::cout << dog_one << std::endl;
+
+		dog_two = dog_one;
+		std::cout << "----- dog_two second time -----" << std::endl;
+		dog_two.setIdea("Dog two's fith new idea");
+		std::cout << dog_two << std::endl;
+		std::cout << "----- dog_one -----" << std::endl;
+		std::cout << dog_one << std::endl;
+	}
 
 
 	{
-		std::cout << "------------------ deep copy test << ----------------" << std::endl;
+		std::cout << "------------------ dog deep copy test << ----------------" << std::endl;
 		Dog basicDog;
 		basicDog.setIdea("BasicDog first idea");
 		std::cout << basicDog << std::endl;
 		Dog tmpDog = basicDog;
 		std::cout << tmpDog << std::endl;
-
+	}
+	{	
+		std::cout << "------------------ cat deep copy test << ----------------" << std::endl;
 		Cat basicCat;
 		basicCat.setIdea("BasicCat first idea");
 		std::cout << basicCat << std::endl;
@@ -242,6 +223,8 @@ int main()
 		std::cout << tmpCat << std::endl;
 	}
 
-*/
+/**/
 	return 0;
 }
+/**/
+	
