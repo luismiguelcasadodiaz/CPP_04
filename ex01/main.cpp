@@ -6,7 +6,7 @@
 /*   By: luicasad <luicasad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/18 11:39:45 by luicasad          #+#    #+#             */
-/*   Updated: 2025/01/18 11:41:29 by luicasad         ###   ########.fr       */
+/*   Updated: 2025/01/22 11:15:28 by luicasad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "Animal.class.hpp"
@@ -111,52 +111,6 @@ int main()
 			pack[i].makeSound();
 		}
 	}
-	{
-		std::cout << "ex 01==== SIXTH CONTEXT: Pointers to  Animals with Brains =============" << std::endl;
-		const std::size_t N = 4;
-		Animal* pack[N];
-		Animal* back[N];
-
-		for (std::size_t i = 0; i < N; i++){
-			if (i % 2  == 0)
-				pack[i] = new Cat();
-			else
-				pack[i] = new Dog();
-			pack[i]->makeSound();
-		}
-		for (std::size_t i = 0; i < N; i++)
-			delete pack[i];
-		{
-		
-		for (std::size_t i = 0; i < N; i++)
-			std::cout << pack[i] << std::endl;
-		std::cout << "------------------Brain states after second dog gets first dog's brain ----------------" << std::endl;
-
-		pack[3] = pack[1];
-		for (std::size_t i = 0; i < N; i++)
-			std::cout << pack[i] << std::endl;
-
-		std::cout << "------------------Brain states after back[i]=pack[1]; ----------------" << std::endl;
-		for (std::size_t i = 0; i < N; i++){
-			back[i] = pack[i];
-			std::cout << back[i] << std::endl;
-		}
-		//Dog* copied = dynamic_cast<Dog*>(pack[1]);	
-		
-		//for (std::size_t i = 0; i < N; i++)
-		//	std::cout << *copied << std::endl;
-
-		std::cout << "------------------ Brain copies destruction step  << ----------------" << std::endl;
-		// for (std::size_t i = 0; i < N; i++) {
-		// 	delete back[i];
-
-		// }
-		// for (std::size_t i = 0; i < N; i++) {
-		// 	delete *(pack[i]);
-
-		// }
-	}
-	}
 
 	{
 		std::cout << "ex 01 ==== SEVENTH CONTEXT: Dog copy with constructor " << std::endl;
@@ -226,5 +180,55 @@ int main()
 /**/
 	return 0;
 }
-/**/
+/*
 	
+	{
+		std::cout << "ex 01==== SIXTH CONTEXT: Pointers to  Animals with Brains =============" << std::endl;
+		const std::size_t N = 4;
+		Animal* pack[N];
+		Animal* back[N];
+
+		for (std::size_t i = 0; i < N; i++){
+			if (i % 2  == 0)
+				pack[i] = new Cat();
+			else
+				pack[i] = new Dog();
+			pack[i]->makeSound();
+		}
+		for (std::size_t i = 0; i < N; i++)
+			std::cout << *pack[i] << std::endl;
+
+		
+		std::cout << "------------------Brain states after second dog gets first dog's brain ----------------" << std::endl;
+
+		pack[3] = pack[1];
+		for (std::size_t i = 0; i < N; i++)
+			std::cout << *pack[i] << std::endl;
+
+		std::cout << "------------------Brain states after back[i]=pack[1]; ----------------" << std::endl;
+		for (std::size_t i = 0; i < N; i++){
+			back[i] = pack[i];
+			std::cout << *back[i] << std::endl;
+		}
+		//Dog* copied = dynamic_cast<Dog*>(pack[1]);	
+		
+		//for (std::size_t i = 0; i < N; i++)
+		//	std::cout << *copied << std::endl;
+
+		std::cout << "------------------ Brain copies destruction step  << ----------------" << std::endl;
+		for (std::size_t i = 0; i < N; i++){
+			if (i % 2  == 0)
+				delete dynamic_cast<Cat*>(pack[i]);
+			else
+				delete dynamic_cast<Dog*>(pack[i]);
+		}
+		for (std::size_t i = 0; i < N; i++){
+			if (i % 2  == 0)
+				delete dynamic_cast<Cat*>(back[i]);
+			else
+				delete dynamic_cast<Dog*>(back[i]);
+		}
+
+	}
+	*/
+

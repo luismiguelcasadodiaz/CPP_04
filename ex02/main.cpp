@@ -19,34 +19,34 @@
 
 int main()
 {
-	/*
+	
 	{
-	std::cout << "==== FIRST CONTEXT: makeSound() is virtual =============" << std::endl;
-	const Animal* meta = new Animal();
+	std::cout << "EX00 ==== FIRST CONTEXT: makeSound() is virtual =============" << std::endl;
+	//const Animal* meta = new Animal();
 	const Animal* j = new Dog();
 	const Animal* i = new Cat();
 
 	std::cout << "------------------printing types << ----------------" << std::endl;
-	std::cout << meta->getType() << " is the type of an Animal pointer to  Animal " << std::endl;
+	//std::cout << meta->getType() << " is the type of an Animal pointer to  Animal " << std::endl;
 	std::cout << j->getType() << " is the type of an Animal pointer to  Dog " << std::endl;
 	std::cout << i->getType() << " is the type of an Animal pointer to  Cat" << std::endl;
 	std::cout << "------------------make sounds << ----------------" << std::endl;
 	i->makeSound(); //will output the cat sound!
 	j->makeSound();
-	meta->makeSound();
+	//meta->makeSound();
 
 	std::cout << "------------------impresiones sobrecarga << ----------------" << std::endl;
-	std::cout << *meta << std::endl;
+	//std::cout << *meta << std::endl;
 	std::cout << *i << std::endl;
 	std::cout << *j << std::endl;
 
 	std::cout << "------------------ destruction step  << ----------------" << std::endl;
-	delete meta;
+	//delete meta;
 	delete j;
 	delete i;
 	}
 	{
-	std::cout << "==== SECOND CONTEXT: makeSound() is normal =============" << std::endl;
+	std::cout << "EX00==== SECOND CONTEXT: makeSound() is normal =============" << std::endl;
 	const WrongAnimal* wmeta = new WrongAnimal();
 	const WrongAnimal* wi = new WrongCat();
 
@@ -61,9 +61,9 @@ int main()
 	delete wmeta;
 	delete wi;
 	}
-	*/
-/*	
-	std::cout << "==== THIRD CONTEXT: Brains =============" << std::endl;
+	/**/
+/*	*/
+	std::cout << "EX01 ==== THIRD CONTEXT: Brains =============" << std::endl;
 
 	{	
 		
@@ -87,9 +87,9 @@ int main()
 
 		std::cout << two << std::endl;
 	}
-*/
+
 	{
-		std::cout << "==== FOURTH CONTEXT: static Animals with Brains =============" << std::endl;
+		std::cout << "ex01 ==== FOURTH CONTEXT: static Animals with Brains =============" << std::endl;
 		std::cout << "------------------ Leak test  << ----------------" << std::endl;
 		const Animal* j = new Dog();
 		const Animal* i = new Cat();
@@ -112,7 +112,7 @@ int main()
 	// 	}
 	// }
 	{
-		std::cout << "==== SIXTH CONTEXT: Pointers to  Animals with Brains =============" << std::endl;
+		std::cout << "ex01 ==== SIXTH CONTEXT: Pointers to  Animals with Brains =============" << std::endl;
 		const std::size_t N = 4;
 		Animal* pack[N];
 
@@ -128,7 +128,7 @@ int main()
 	}
 
 	{
-		std::cout << "==== SEVENTH CONTEXT: Dog copy with constructor " << std::endl;
+		std::cout << "ex01 ==== SEVENTH CONTEXT: Dog copy with constructor " << std::endl;
 
 		Dog dog_one = Dog();
 
@@ -148,7 +148,7 @@ int main()
 	}
 
 	{
-		std::cout << "==== EIGHTTH CONTEXT: Dog Copy EQUAL operator =============" << std::endl;
+		std::cout << "ex01 ==== EIGHTTH CONTEXT: Dog Copy EQUAL operator =============" << std::endl;
 
 		Dog dog_one = Dog();
 
@@ -173,6 +173,11 @@ int main()
 		std::cout << "----- dog_one -----" << std::endl;
 		std::cout << dog_one << std::endl;
 	}
+
+	return 0;
+}
+
+
 /*
 	{
 		std::cout << "------------------Brains initial states has no ideas ----------------" << std::endl;	
@@ -243,5 +248,3 @@ int main()
 	}
 
 */
-	return 0;
-}
